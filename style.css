@@ -1,0 +1,356 @@
+/* ============================================
+   THE BOHO MARKET — style.css
+   Header Section
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap');
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --sand:      #f5ede0;
+  --terracotta:#c2714f;
+  --clay:      #a05c3b;
+  --ink:       #2b1f18;
+  --warm-white:#fdf8f3;
+  --muted:     #9b8678;
+  --nav-font:  'Jost', sans-serif;
+  --logo-font: 'Playfair Display', serif;
+}
+
+body {
+  background-color: var(--warm-white);
+  color: var(--ink);
+  font-family: var(--nav-font);
+}
+
+/* ── Header ── */
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 4vw;
+  height: 72px;
+
+  background-color: var(--warm-white);
+  border-bottom: 1px solid rgba(162, 92, 59, 0.18);
+
+  /* subtle warm shadow */
+  box-shadow: 0 2px 18px rgba(160, 92, 59, 0.08);
+}
+
+/* ── Logo ── */
+#header > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+#header > a img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+
+  /* warm sepia feel */
+  filter: sepia(20%) contrast(1.05);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+#header > a:hover img {
+  filter: sepia(0%) contrast(1.1);
+  transform: scale(1.03);
+}
+
+/* ── Navbar ── */
+#navbar {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 2.5vw, 2.8rem);
+}
+
+#navbar li a {
+  font-family: var(--nav-font);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.25s ease;
+}
+
+/* animated underline */
+#navbar li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: var(--terracotta);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#navbar li a:hover {
+  color: var(--terracotta);
+}
+
+#navbar li a:hover::after {
+  width: 100%;
+}
+
+/* ── Cart Icon ── */
+#navbar li:last-child a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: var(--ink) !important;         /* force override any inherited transparency */
+  font-size: 1.1rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ensure the <i> icon inside inherits colour */
+#navbar li:last-child a i {
+  color: inherit;
+  font-size: 1.1rem;
+  display: block;
+}
+
+#navbar li:last-child a::after {
+  display: none; /* no underline on icon */
+}
+
+#navbar li:last-child a:hover {
+  background-color: var(--sand);
+  color: var(--clay) !important;
+}
+
+/* ── Decorative divider between nav links and cart ── */
+#navbar li:last-child {
+  margin-left: 0.6rem;
+  padding-left: 1.2rem;
+  border-left: 1px solid rgba(160, 92, 59, 0.25);
+}
+
+/* ── Active link state (add class="active" in HTML if needed) ── */
+#navbar li a.active {
+  color: var(--terracotta);
+}
+
+#navbar li a.active::after {
+  width: 100%;
+}
+/* ============================================
+   THE BOHO MARKET — Hero Section (Split Layout)
+   Paste this into your style.css
+   ============================================ */
+
+#hero {
+  min-height: calc(100vh - 72px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 6vw;
+  gap: 4rem;
+  overflow: hidden;
+  background: var(--warm-white);
+}
+
+/* =====================
+   LEFT — Text Side
+   ===================== */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ── "New Arrivals" badge ── */
+.hero-text h4 {
+  font-family: var(--nav-font);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.4rem;
+
+  animation: fadeLeft 0.8s ease both;
+  animation-delay: 0.1s;
+}
+
+/* ── Main Heading ── */
+.hero-text h2 {
+  font-family: var(--logo-font);
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+
+  animation: fadeLeft 0.8s ease both;
+  animation-delay: 0.25s;
+}
+
+.hero-text h2 em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+/* ── Tagline ── */
+.hero-text p {
+  font-family: var(--nav-font);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 360px;
+  margin-bottom: 2.4rem;
+
+  animation: fadeLeft 0.8s ease both;
+  animation-delay: 0.4s;
+}
+
+/* ── CTA Button ── */
+.hero-text button {
+  padding: 14px 36px;
+  font-family: var(--nav-font);
+  font-size: 0.80rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--warm-white);
+  background-color: var(--terracotta);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(194, 113, 79, 0.30);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+
+  animation: fadeLeft 0.8s ease both;
+  animation-delay: 0.55s;
+}
+
+.hero-text button:hover {
+  background-color: var(--clay);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(194, 113, 79, 0.40);
+}
+
+.hero-text button:active {
+  transform: translateY(0);
+}
+
+/* =====================
+   RIGHT — Image Collage
+   ===================== */
+.hero-images {
+  position: relative;
+  height: 540px;
+  width: 100%;
+}
+
+.hero-images img {
+  position: absolute;
+  object-fit: cover;
+  box-shadow: 0 12px 40px rgba(43, 31, 24, 0.13);
+}
+
+/* large image — left, tall */
+.hero-images img:nth-child(1) {
+  width: 55%;
+  height: 72%;
+  top: 10%;
+  left: 0;
+
+  border-radius: 120px 16px 16px 16px;
+
+  animation: fadeUp 0.9s ease both;
+  animation-delay: 0.2s;
+}
+
+/* tall image — top right */
+.hero-images img:nth-child(2) {
+  width: 44%;
+  height: 55%;
+  top: 0;
+  right: 0;
+  border-radius: 16px 130px 16px 16px;
+
+  animation: fadeUp 0.9s ease both;
+  animation-delay: 0.4s;
+}
+
+/* small image — bottom right, overlapping */
+.hero-images img:nth-child(3) {
+  width: 44%;
+  height: 44%;
+  bottom: 0;
+  right: 0;
+  border-radius: 16px 16px 130px 16px;
+
+  animation: fadeUp 0.9s ease both;
+  animation-delay: 0.6s;
+}
+
+/* decorative blob behind collage */
+.hero-images::before {
+  content: '';
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 237, 224, 1) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  z-index: -1;
+}
+
+/* =====================
+   Animations
+   ===================== */
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
