@@ -1,0 +1,1 @@
+// JavaScript file moved from root to assets/js/main.js
