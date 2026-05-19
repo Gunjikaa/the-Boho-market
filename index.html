@@ -15,8 +15,11 @@
             <ul id="navbar">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                 <li><a href="wishlist.html"><i class="fa-solid fa-heart"></i></a></li>
+  <li><a href="account.html"><i class="fa-solid fa-user"></i></a></li>
                 <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </div>
@@ -390,42 +393,109 @@
     <button class="view-all-btn">View All Products <i class="fa-solid fa-arrow-right"></i></button>
   </div>
 </section>
+
 <!-- ============================================
-     NEWSLETTER POPUP
+     INSTAGRAM FEED — CAROUSEL
      ============================================ -->
-<div id="newsletter-popup" class="popup-overlay">
-  <div class="popup-container">
-    <button class="popup-close" id="closePopup">&times;</button>
-    
-    <div class="popup-content">
-      <div class="popup-image">
-        <img src="images/popup-boho.jpg" alt="Boho vibes">
-      </div>
-      
-      <div class="popup-form-container">
-        <div class="popup-icon">
-          <i class="fa-regular fa-gem"></i>
-        </div>
-        <h3>Join the <span>Boho Circle</span></h3>
-        <p>Be the first to know about new arrivals, exclusive drops, and sales.</p>
-        
-        <div class="popup-offer">
-          <span class="offer-badge">Welcome Gift</span>
-          <div class="offer-code">15% OFF</div>
-          <small>on your first purchase</small>
-        </div>
-        
-        <form id="popup-form" class="popup-form">
-          <input type="text" placeholder="Your name" required>
-          <input type="email" placeholder="Email address" required>
-          <button type="submit">Claim My 15% Off <i class="fa-solid fa-arrow-right"></i></button>
-        </form>
-        
-        <p class="popup-note">No spam, only earthy inspo. Unsubscribe anytime.</p>
-      </div>
+<section id="instagram-feed">
+  <div class="insta-header">
+    <div class="insta-icon">
+      <i class="fa-brands fa-instagram"></i>
     </div>
+    <h2>Follow <em>@thebohomarket</em></h2>
+    <p>Tag us in your posts to get featured ✨</p>
   </div>
-</div>
+
+  <div class="insta-carousel-container">
+    <button class="carousel-btn prev-btn" id="instaPrev">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <div class="insta-carousel" id="instaCarousel">
+      
+      <!-- Slide 1 -->
+      <div class="insta-slide">
+        <div class="insta-card">
+          <img src="https://picsum.photos/id/20/400/400" alt="Instagram post by customer">
+          <div class="insta-overlay">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@bohogirl_riya</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="insta-slide">
+        <div class="insta-card">
+          <img src="https://picsum.photos/id/96/400/400" alt="Instagram post by customer">
+          <div class="insta-overlay">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@free_spirit_sam</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="insta-slide">
+        <div class="insta-card">
+          <img src="https://picsum.photos/id/127/400/400" alt="Instagram post by customer">
+          <div class="insta-overlay">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@desi_boho_life</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="insta-slide">
+        <div class="insta-card">
+          <img src="https://picsum.photos/id/169/400/400" alt="Instagram post by customer">
+          <div class="insta-overlay">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@bohohome_decor</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="insta-slide">
+        <div class="insta-card">
+          <img src="https://picsum.photos/id/176/400/400" alt="Instagram post by customer">
+          <div class="insta-overlay">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@wanderlust_neha</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="insta-slide">
+        <div class="insta-card">
+          <img src="https://picsum.photos/id/30/400/400" alt="Instagram post by customer">
+          <div class="insta-overlay">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@thebohoquote</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-btn next-btn" id="instaNext">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <div class="insta-dots" id="instaDots">
+    <!-- Dots will be added by JavaScript -->
+  </div>
+
+  <div class="insta-footer">
+    <a href="https://instagram.com/thebohomarket" target="_blank" class="insta-follow-btn">
+      <i class="fa-brands fa-instagram"></i> Follow @thebohomarket
+    </a>
+  </div>
+</section>
 
     
 <!-- ============================================
@@ -526,6 +596,50 @@
     </div>
   </div>
 </footer>
+<!-- ============================================
+     BACK TO TOP BUTTON
+     ============================================ -->
+<button id="backToTop" class="back-to-top">
+  <i class="fa-solid fa-arrow-up"></i>
+  <span>Top</span>
+</button>
+<!-- ============================================
+     NEWSLETTER POPUP
+     ============================================ -->
+<div id="newsletter-popup" class="popup-overlay">
+  <div class="popup-container">
+    <button class="popup-close" id="closePopup">&times;</button>
+    
+    <div class="popup-content">
+      <div class="popup-image">
+        <img src="images/1fde7a9b74cc8a7a7119f37111625e92.jpg" alt="Boho vibes">
+      </div>
+      
+      <div class="popup-form-container">
+        <div class="popup-icon">
+          <i class="fa-regular fa-gem"></i>
+        </div>
+        <h3>Join the <span>Boho Circle</span></h3>
+        <p>Be the first to know about new arrivals, exclusive drops, and sales.</p>
+        
+        <div class="popup-offer">
+          <span class="offer-badge">Welcome Gift</span>
+          <div class="offer-code">15% OFF</div>
+          <small>on your first purchase</small>
+        </div>
+        
+        <form id="popup-form" class="popup-form">
+          <input type="text" placeholder="Your name" required>
+          <input type="email" placeholder="Email address" required>
+          <button type="submit">Claim My 15% Off <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+        
+        <p class="popup-note">No spam, only earthy inspo. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
     <script src="script.js"></script>
 </body>
 </html>
