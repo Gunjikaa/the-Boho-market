@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wishlist — the-Boho-market</title>
+  <title>Account — the-Boho-market</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="wishlist.css">
+  <link rel="stylesheet" href="account.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -26,41 +26,78 @@
         <li><a href="about.html">About</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="wishlist.html" class="active"><i class="fa-solid fa-heart"></i></a></li>
-        <li><a href="account.html"><i class="fa-solid fa-user"></i></a></li>
+        <li><a href="wishlist.html"><i class="fa-solid fa-heart"></i></a></li>
+        <li><a href="account.html" class="active"><i class="fa-solid fa-user"></i></a></li>
         <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
       </ul>
     </div>
   </section>
 
-  <!-- Wishlist Hero -->
-  <section id="wishlist-hero">
-    <div class="wishlist-hero-content">
-      <i class="fa-regular fa-heart"></i>
-      <h1>Your <em>Wishlist</em></h1>
-      <p>Your favorite treasures, saved for later</p>
+  <!-- Account Hero -->
+  <section id="account-hero">
+    <div class="account-hero-content">
+      <i class="fa-regular fa-user"></i>
+      <h1>My <em>Account</em></h1>
+      <p>Login or create an account to track orders and save favorites</p>
     </div>
   </section>
 
-  <!-- Wishlist Main -->
-  <section id="wishlist-main">
-    <div class="wishlist-container">
+  <!-- Account Main -->
+  <section id="account-main">
+    <div class="account-container">
       
-      <div class="wishlist-grid" id="wishlistGrid">
-        <!-- Wishlist items will be loaded here -->
+      <!-- Login Form -->
+      <div class="login-form">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="loginEmail" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+          </div>
+          <button type="submit">Login</button>
+          <p class="form-footer"><a href="#">Forgot password?</a></p>
+        </form>
       </div>
 
-      <div class="empty-wishlist" id="emptyWishlist" style="display: none;">
-        <i class="fa-regular fa-heart"></i>
-        <h3>Your wishlist is empty</h3>
-        <p>Start adding your favorite products to your wishlist</p>
-        <a href="shop.html" class="shop-now-btn">Shop Now</a>
+      <!-- Register Form -->
+      <div class="register-form">
+        <h2>Create Account</h2>
+        <form id="registerForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" id="regFirstName" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" id="regLastName" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="regEmail" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="regPassword" required>
+          </div>
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" id="regConfirmPassword" required>
+          </div>
+          <button type="submit">Create Account</button>
+          <p class="form-footer">By creating an account, you agree to our Terms & Conditions</p>
+        </form>
       </div>
 
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer (Same as all other pages) -->
   <footer id="footer">
     <div class="footer-container">
       <div class="footer-col">
@@ -108,6 +145,6 @@
     </div>
   </footer>
 
-  <script src="wishlist.js"></script>
+  <script src="account.js"></script>
 </body>
 </html>

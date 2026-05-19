@@ -721,3 +721,179 @@ document.querySelector('.blog-newsletter-form')?.addEventListener('submit', (e) 
   e.preventDefault();
   alert('Thanks for subscribing!');
 });
+// ============================================
+// WISHLIST PAGE - the-Boho-market
+// ============================================
+
+// Sample wishlist data (normally from localStorage)
+let wishlistItems = [
+  {
+    id: 1,
+    name: "Boho Woven Handbag",
+    category: "Handbags",
+    price: 1299,
+    image: "images/handbag1.jpg"
+  },
+  {
+    id: 5,
+    name: "Rattan Wall Mirror",
+    category: "Home Decor",
+    price: 2199,
+    image: "images/decor1.jpg"
+  },
+  {
+    id: 7,
+    name: "Terracotta Bead Necklace",
+    category: "Jewelry",
+    price: 549,
+    image: "images/jewel1.jpg"
+  }
+];
+
+function renderWishlist() {
+  const grid = document.getElementById('wishlistGrid');
+  const emptyDiv = document.getElementById('emptyWishlist');
+  
+  if (!wishlistItems.length) {
+    grid.style.display = 'none';
+    emptyDiv.style.display = 'block';
+    return;
+  }
+  
+  grid.style.display = 'grid';
+  emptyDiv.style.display = 'none';
+  
+  grid.innerHTML = wishlistItems.map(item => `
+    <div class="wishlist-card" data-id="${item.id}">
+      <div class="wishlist-image">
+        <img src="${item.image}" alt="${item.name}">
+        <button class="remove-wishlist" onclick="removeFromWishlist(${item.id})">
+          <i class="fa-regular fa-trash-can"></i>
+        </button>
+      </div>
+      <div class="wishlist-info">
+        <h3>${item.name}</h3>
+        <p class="wishlist-category">${item.category}</p>
+        <p class="wishlist-price">₹${item.price.toLocaleString()}</p>
+        <button class="add-to-cart-wishlist" onclick="addToCart(${item.id})">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function removeFromWishlist(id) {
+  wishlistItems = wishlistItems.filter(item => item.id !== id);
+  renderWishlist();
+}
+
+function addToCart(id) {
+  const item = wishlistItems.find(i => i.id === id);
+  alert(`Added ${item.name} to cart!`);
+  // Here you would actually add to cart
+}
+
+renderWishlist();
+document.getElementById('loginForm')?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert('Login successful! Redirecting...');
+});
+
+document.getElementById('registerForm')?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const pwd = document.getElementById('regPassword').value;
+  const confirm = document.getElementById('regConfirmPassword').value;
+  if (pwd !== confirm) {
+    alert('Passwords do not match');
+    return;
+  }
+  alert('Account created successfully! Please login.');
+});
+// About page functionality
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Newsletter form
+  const newsletterForm = document.querySelector('.about-newsletter-form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input').value;
+      if (email) {
+        alert(`Thanks for subscribing! You'll receive boho inspo at ${email}`);
+        this.reset();
+      }
+    });
+  }
+  
+});
+// ============================================
+// CONTACT PAGE FUNCTIONALITY - the-Boho-market
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Contact Form Submission
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name')?.value;
+      const email = document.getElementById('email')?.value;
+      const message = document.getElementById('message')?.value;
+      
+      if (!name || !email || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      
+      // Show success message
+      const successDiv = document.createElement('div');
+      successDiv.className = 'success-message';
+      successDiv.innerHTML = `<i class="fa-regular fa-circle-check"></i> Thank you ${name}! We'll get back to you soon.`;
+      
+      contactForm.parentNode.insertBefore(successDiv, contactForm.nextSibling);
+      contactForm.reset();
+      
+      setTimeout(() => successDiv.remove(), 5000);
+    });
+  }
+  
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const faqItem = question.parentElement;
+      const isActive = faqItem.classList.contains('active');
+      
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    });
+  });
+  
+  // Newsletter Form
+  const newsletterForm = document.querySelector('.contact-newsletter-form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input').value;
+      if (email) {
+        alert(`Thanks for subscribing! You'll receive boho inspo at ${email}`);
+        this.reset();
+      }
+    });
+  }
+  
+});
