@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — the-Boho-market</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <section id="header">
+    <span class="bokeh-1"></span>
+    <span class="bokeh-2"></span>
+    <span class="bokeh-3"></span>
+    <a href="index.html" class="logo-link">
+      <img src="images/OIP.webp" alt="logo">
+      <span class="logo-text">the-Boho-market</span>
+    </a>
+    <div>
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="wishlist.html"><i class="fa-solid fa-heart"></i></a></li>
+        <li><a href="account.html"><i class="fa-solid fa-user"></i></a></li>
+        <li><a href="cart.html" class="active"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Cart Hero -->
+  <section id="cart-hero">
+    <div class="cart-hero-content">
+      <h1>Your <em>Cart</em></h1>
+      <p>Review your treasures before checkout</p>
+    </div>
+  </section>
+
+  <!-- Cart Main -->
+  <section id="cart-main">
+    <div class="cart-container">
+      
+      <!-- Cart Items -->
+      <div class="cart-items">
+        <div class="cart-header">
+          <p>Product</p>
+          <p>Price</p>
+          <p>Quantity</p>
+          <p>Total</p>
+          <p></p>
+        </div>
+
+        <!-- Cart Item 1 -->
+        <div class="cart-item">
+          <div class="cart-product">
+            <img src="images/handbag1.jpg" alt="Boho Woven Handbag">
+            <div class="cart-product-info">
+              <h3>Boho Woven Handbag</h3>
+              <p class="cart-category">Handbags</p>
+            </div>
+          </div>
+          <div class="cart-price">₹1,299</div>
+          <div class="cart-quantity">
+            <button class="qty-decr">-</button>
+            <input type="number" value="1" min="1" max="10">
+            <button class="qty-incr">+</button>
+          </div>
+          <div class="cart-total">₹1,299</div>
+          <div class="cart-remove">
+            <button class="remove-btn"><i class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+
+        <!-- Cart Item 2 -->
+        <div class="cart-item">
+          <div class="cart-product">
+            <img src="images/decor1.jpg" alt="Rattan Wall Mirror">
+            <div class="cart-product-info">
+              <h3>Rattan Wall Mirror</h3>
+              <p class="cart-category">Home Décor</p>
+            </div>
+          </div>
+          <div class="cart-price">₹2,199</div>
+          <div class="cart-quantity">
+            <button class="qty-decr">-</button>
+            <input type="number" value="1" min="1" max="10">
+            <button class="qty-incr">+</button>
+          </div>
+          <div class="cart-total">₹2,199</div>
+          <div class="cart-remove">
+            <button class="remove-btn"><i class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+
+        <!-- Cart Item 3 -->
+        <div class="cart-item">
+          <div class="cart-product">
+            <img src="images/jewel1.jpg" alt="Terracotta Bead Necklace">
+            <div class="cart-product-info">
+              <h3>Terracotta Bead Necklace</h3>
+              <p class="cart-category">Jewellery</p>
+            </div>
+          </div>
+          <div class="cart-price">₹549</div>
+          <div class="cart-quantity">
+            <button class="qty-decr">-</button>
+            <input type="number" value="1" min="1" max="10">
+            <button class="qty-incr">+</button>
+          </div>
+          <div class="cart-total">₹549</div>
+          <div class="cart-remove">
+            <button class="remove-btn"><i class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+
+        <!-- Empty Cart Message (hidden by default) -->
+        <div class="empty-cart" style="display: none;">
+          <i class="fa-regular fa-bag-shopping"></i>
+          <h3>Your cart is empty</h3>
+          <p>Looks like you haven't added any treasures yet.</p>
+          <a href="shop.html" class="continue-shop-btn">Continue Shopping</a>
+        </div>
+
+      </div>
+
+      <!-- Cart Summary -->
+      <div class="cart-summary">
+        <h3>Order Summary</h3>
+        
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="subtotal">₹4,047</span>
+        </div>
+        
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span>Free</span>
+        </div>
+        
+        <div class="summary-row">
+          <span>Tax (GST)</span>
+          <span id="tax">₹728</span>
+        </div>
+        
+        <div class="summary-row total">
+          <span>Total</span>
+          <span id="total">₹4,775</span>
+        </div>
+        
+        <div class="promo-code">
+          <input type="text" placeholder="Promo code">
+          <button>Apply</button>
+        </div>
+        
+        <button class="checkout-btn">Proceed to Checkout <i class="fa-solid fa-arrow-right"></i></button>
+        
+        <div class="payment-methods">
+          <p>Secure payments</p>
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-amex"></i>
+          <i class="fa-brands fa-cc-paypal"></i>
+          <i class="fa-brands fa-google-pay"></i>
+          <i class="fa-brands fa-apple-pay"></i>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Continue Shopping Button -->
+    <div class="continue-shopping">
+      <a href="shop.html" class="continue-btn">
+        <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+      </a>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <img src="images/OIP.webp" alt="The Boho Market">
+          <span>the-Boho-market</span>
+        </div>
+        <p class="footer-tagline">Free-spirited finds for your nest & closet.</p>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Home Decor</a></li>
+          <li><a href="#">Jewelry</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter-col">
+        <h4>Join the Boho Circle</h4>
+        <p class="newsletter-text">Get 15% off your first order</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email">
+          <button type="submit"><i class="fa-regular fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Boho Market — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+</body>
+</html>
